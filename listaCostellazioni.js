@@ -28,7 +28,7 @@ const costellazioni = {
     visibilita: "Tutto l’anno",
     mesiVisibili: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   },
-  "Boote": {
+  "boote": {
     nome: "Boote",
     immagine: "img/boote.jpg",
     mitologia: "Il bovaro, colui che ara i campi",
@@ -37,7 +37,7 @@ const costellazioni = {
     visibilita: "Da gennaio ad ottobre",
     mesiVisibili: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
-  "Orione": {
+  "orione": {
     nome: "Orione",
     immagine: "img/orione.jpg",
     mitologia: "Un cacciatore munito di spada ed arco",
