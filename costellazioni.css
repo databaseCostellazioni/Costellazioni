@@ -1,0 +1,175 @@
+/* Imposta lo sfondo a tutta la pagina */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("img/sfondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: sans-serif;
+  color: white;
+}
+
+/* Facoltativo: aggiungi un overlay per migliorare il contrasto del testo se serve */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.4); /* scurisce leggermente lo sfondo */
+  z-index: -1;
+}
+
+header{
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 1rem;
+  padding-bottom: 5px; /* spazio per il footer */
+}
+
+.grid-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  max-width: 400px; /* Limita la larghezza totale della griglia */
+  margin: 0 auto;   /* Centra la griglia orizzontalmente */
+  padding: 0 1rem;  /* Spazio laterale per non attaccarsi ai bordi */
+  box-sizing: border-box;
+}
+
+.grid-buttons button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+  transition: all 0.2s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+}
+
+.grid-buttons button:hover {
+  background: rgba(102, 252, 241, 0.2);
+  box-shadow: inset 0 0 12px rgba(102, 252, 241, 0.4), 0 0 16px rgba(102, 252, 241, 0.3);
+  color: #8f8f8f;
+  border-color: rgba(102, 252, 241, 0.5);
+}
+
+.grid-buttons button img.costellazione-img {
+  width: 150px;      /* Limita la larghezza dell'immagine */
+  height: auto;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  transform: scale(1.3);
+  user-select: none;
+  pointer-events: none;
+}
+
+
+.sub-buttons button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-buttons button:hover {
+  background: rgba(102, 252, 241, 0.2);
+  box-shadow: inset 0 0 12px rgba(102, 252, 241, 0.4), 0 0 16px rgba(102, 252, 241, 0.3);
+  color: #8f8f8f;
+  border-color: rgba(102, 252, 241, 0.5);
+}
+
+
+.sub-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.sub-section {
+  background-color: #0b0c10;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid #45a29e;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+footer {
+  position: fixed;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  color: red;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.7rem;
+  z-index: 1000; /* per stare sopra altri elementi */
+  border-radius: 0; /* opzionale, così tocca i bordi */
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* <-- non più center */
+  z-index: 1000;
+  overflow-y: auto; /* utile se la modale è lunga */
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  margin-top: 80px; /* <-- distanza dal bordo superiore */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+}
+
+
+.close-btn {
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+}

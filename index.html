@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Costellazioni Boreali</title>
+  <link rel="stylesheet" href="costellazioni.css" />
+</head>
+<body>
+  <header>
+    <h1>Costellazioni Boreali</h1>
+    <div class="top-bar">
+      <!-- Spazio per link, pulsanti, icone -->
+      <button onclick="alert('Funzione futura')">Info</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid-buttons"></div>
+
+<!-- Una sola modale riutilizzabile -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">✖</button>
+    <h2 id="modal-title"></h2>
+    <img id="modal-image" src="" alt="" />
+    <p id="modal-informazioni" class="informazioni"></p>
+    <p id="modal-visibility" class="visibilita"></p>
+    <div class="sub-buttons">
+      <button onclick="toggleSub('modal-myth')">Mitologia</button>
+      <button onclick="toggleSub('modal-stars')">Stelle</button>
+      <button onclick="toggleSub('modal-objects')">Oggetti Celesti</button>
+    </div>
+    <div id="modal-myth" class="sub-section hidden"></div>
+    <div id="modal-stars" class="sub-section hidden"></div>
+    <div id="modal-objects" class="sub-section hidden"></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Emanuele Scaltri</p>
+  </footer>
+
+  <script src="listaCostellazioni.js"></script>
+  <script src="costellazioni.js"></script>
+</body>
+</html>
