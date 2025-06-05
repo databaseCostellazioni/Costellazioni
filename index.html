@@ -7,13 +7,17 @@
   <link rel="stylesheet" href="costellazioni.css" />
 </head>
 <body>
-  <header>
-    <h1>Costellazioni Boreali</h1>
-    <div class="top-bar">
-      <!-- Spazio per link, pulsanti, icone -->
-      <button class="sub-buttons-button" onclick="alert('Funzione futura')">Info</button>
-    </div>
-  </header>
+<header>
+  <h1>Scopri il cielo</h1>
+  <div class="top-bar">
+    <button class="sub-buttons-button" onclick="alert('Funzione futura')">Info</button>
+    <button class="sub-buttons-button" onclick="alert('Costellazioni')">Costellazioni</button>
+    <button class="sub-buttons-button" onclick="alert('Pianeti')">Pianeti</button>
+    <button class="sub-buttons-button" onclick="alert('Oggetti celesti')">Oggetti celesti</button>
+    <button class="sub-buttons-button" onclick="alert('Cielo di oggi')">Il cielo di oggi</button>
+  </div>
+</header>
+
 
   <main>
     <div class="grid-buttons"></div>
@@ -26,14 +30,15 @@
     <img id="modal-image" src="" alt="" />
     <p id="modal-informazioni" class="informazioni"></p>
     <p id="modal-visibility" class="visibilita"></p>
-    <div class="sub-buttons">
-      <button onclick="toggleSub('modal-myth')">Mitologia</button>
-      <button onclick="toggleSub('modal-stars')">Stelle</button>
-      <button onclick="toggleSub('modal-objects')">Oggetti Celesti</button>
-    </div>
-    <div id="modal-myth" class="sub-section hidden"></div>
-    <div id="modal-stars" class="sub-section hidden"></div>
-    <div id="modal-objects" class="sub-section hidden"></div>
+<div class="sub-buttons">
+<div class="sub-buttons">
+  <button onclick="toggleSub('modal-myth')">Mitologia</button>
+  <button onclick="toggleSub('modal-stars')">Stelle</button>
+  <button onclick="toggleSub('modal-trova')">Come trovarla</button>
+</div>
+<div id="modal-myth" class="sub-section hidden"></div>
+<div id="modal-stars" class="sub-section hidden"></div>
+<div id="modal-trova" class="sub-section hidden"></div>
   </div>
 </div>
 

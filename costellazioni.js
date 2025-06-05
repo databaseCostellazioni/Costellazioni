@@ -4,24 +4,42 @@ function openCard(id) {
 
   closeModal();
 
+  // Titolo, immagine principale e descrizioni base
   document.getElementById("modal-title").textContent = data.nome;
   document.getElementById("modal-image").src = data.immagine;
   document.getElementById("modal-image").alt = data.nome;
   document.getElementById("modal-informazioni").textContent = data.informazioni;
   document.getElementById("modal-visibility").textContent = `Periodo di visibilità: ${data.visibilita}`;
 
+  // Mitologia
   document.getElementById("modal-myth").innerHTML = `<p>${data.mitologia}</p>`;
-  document.getElementById("modal-stars").innerHTML =
-    `<ul>${data.stelle.map(stella => `<li>${stella}</li>`).join("")}</ul>`;
-  document.getElementById("modal-objects").innerHTML = `<p>${data.oggetti}</p>`;
 
-  ["modal-myth", "modal-stars", "modal-objects"].forEach(id => {
+  // Stelle
+  document.getElementById("modal-stars").innerHTML = `
+    <ul>${data.stelle.map(stella => `<li>${stella}</li>`).join("")}</ul>
+  `;
+
+  // Sezione "Come trovarla" con immagine dinamica
+document.getElementById("modal-trova").innerHTML = `
+  <p>${data.trova}</p>
+  <img 
+    src="img/trova-${id}.jpg" 
+    alt="Come trovare ${data.nome}" 
+    class="trova-img"
+    onerror="this.style.display='none'"
+  >
+`;
+
+  // Nasconde tutte le sotto-sezioni inizialmente
+  ["modal-myth", "modal-stars", "modal-trova"].forEach(id => {
     document.getElementById(id).classList.add("hidden");
   });
 
+  // Mostra la modale
   const modal = document.getElementById("modal");
   modal.classList.remove("hidden");
 }
+
 
 function closeModal() {
   document.querySelectorAll(".modal").forEach(modal => {
