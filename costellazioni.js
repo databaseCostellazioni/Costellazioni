@@ -4,40 +4,55 @@ function openCard(id) {
 
   closeModal();
 
-  // Titolo, immagine principale e descrizioni base
+  // Dati principali
   document.getElementById("modal-title").textContent = data.nome;
   document.getElementById("modal-image").src = data.immagine;
   document.getElementById("modal-image").alt = data.nome;
   document.getElementById("modal-informazioni").textContent = data.informazioni;
   document.getElementById("modal-visibility").textContent = `Periodo di visibilità: ${data.visibilita}`;
 
-  // Mitologia
-  document.getElementById("modal-myth").innerHTML = `<p>${data.mitologia}</p>`;
-
-  // Stelle
-  document.getElementById("modal-stars").innerHTML = `
-    <ul>${data.stelle.map(stella => `<li>${stella}</li>`).join("")}</ul>
+  // Mitologia con immagine dinamica
+  document.getElementById("modal-myth").innerHTML = `
+    <p>${data.mitologia}</p>
+    <img 
+      src="img/mitologia-${id}.jpg" 
+      alt="Mitologia di ${data.nome}" 
+      class="mito-img"
+      onerror="this.style.display='none'"
+    >
   `;
 
-  // Sezione "Come trovarla" con immagine dinamica
-document.getElementById("modal-trova").innerHTML = `
-  <p>${data.trova}</p>
-  <img 
-    src="img/trova-${id}.jpg" 
-    alt="Come trovare ${data.nome}" 
-    class="trova-img"
-    onerror="this.style.display='none'"
-  >
-`;
+  // Stelle con elenco e immagini multiple dinamiche
+  let stelleHTML = `<ul>${data.stelle.map(stella => `<li>${stella}</li>`).join("")}</ul>`;
+  for (let i = 1; i <= 5; i++) {
+    stelleHTML += `
+      <img 
+        src="img/stelle-${id}-${i}.jpg" 
+        alt="Stelle di ${data.nome} - ${i}" 
+        class="stelle-img"
+        onerror="this.style.display='none'"
+      >
+    `;
+  }
+  document.getElementById("modal-stars").innerHTML = stelleHTML;
 
-  // Nasconde tutte le sotto-sezioni inizialmente
+  // Come trovarla
+  document.getElementById("modal-trova").innerHTML = `
+    <p>${data.trova}</p>
+    <img 
+      src="img/trova-${id}.jpg" 
+      alt="Come trovare ${data.nome}" 
+      class="trova-img"
+      onerror="this.style.display='none'"
+    >
+  `;
+
+  // Nasconde tutte le sezioni, poi puoi mostrarle come ti serve
   ["modal-myth", "modal-stars", "modal-trova"].forEach(id => {
     document.getElementById(id).classList.add("hidden");
   });
 
-  // Mostra la modale
-  const modal = document.getElementById("modal");
-  modal.classList.remove("hidden");
+  document.getElementById("modal").classList.remove("hidden");
 }
 
 
