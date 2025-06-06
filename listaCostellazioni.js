@@ -18,7 +18,7 @@ const costellazioni = {
     informazioni: `Cassiopea è una delle costellazioni più facili da trovare nel cielo notturno, caratterizzata da una forma a "W". al di sopra della terza stella ci sono i resti di una supernova esplosa circa 11000 anni fa.`,
     visibilita: "Tutto l'anno, in particolare tra settembre e marzo",
     mesiVisibili: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    trova: `Una volta individuato il <span class="link-costellazione" onclick="openMiniModal('orsa-maggiore', event)">grande carro</span> e il <span class="link-costellazione" onclick="openMiniModal('orsa-minore', event)">piccolo carro</span>Cassiopea si trova esattamente dall'altra parte del grande carro rispetto al piccolo.`,
+    trova: `Una volta individuato il <span class="link-costellazione" onclick="openMiniModal('orsa-maggiore', event)">grande carro</span> e il <span class="link-costellazione" onclick="openMiniModal('orsa-minore', event)">piccolo carro</span>, Cassiopea si trova esattamente dall'altra parte del grande carro rispetto al piccolo.`,
   },
   "orsa-minore": {
     nome: "Orsa Minore",
