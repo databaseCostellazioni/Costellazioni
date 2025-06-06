@@ -239,3 +239,48 @@ footer {
   color: #8f8f8f;
   border-color: rgba(102, 252, 241, 0.5);
 }
+
+#mini-modal {
+  position: fixed; /* <-- cambia da absolute a fixed */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 150px;
+  max-width: 90vw;
+  z-index: 9999;
+  display: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+
+}
+
+#mini-modal.visible {
+  display: block;
+}
+
+
+#mini-modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  transform: scale(1.5); /* leggermente più piccolo */
+  transform-origin: center; /* evita spostamenti indesiderati */
+}
+
+#mini-modal .close {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.link-costellazione {
+  color: #3a8ee6;
+  cursor: pointer;
+  text-decoration: underline;
+}

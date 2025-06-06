@@ -119,3 +119,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   generaPulsantiCostellazioni();
 });
+
+function openMiniModal(id, event) {
+  const modal = document.getElementById("mini-modal");
+  const title = document.getElementById("mini-modal-title");
+  const img = document.getElementById("mini-modal-image");
+
+  // Contenuto
+  const image = `img/${id}.png`;
+  title.textContent = id.charAt(0).toUpperCase() + id.slice(1);
+  img.src = image;
+  img.alt = id;
+
+  // Posizione
+  const linkRect = event.target.getBoundingClientRect();
+  modal.style.display = "block";
+
+  const modalRect = modal.getBoundingClientRect();
+  let top = linkRect.top - modalRect.height - 8;
+  let left = linkRect.left + (linkRect.width / 2) - (modalRect.width / 2);
+
+  if (left < 8) left = 8;
+  if (left + modalRect.width > window.innerWidth - 8) {
+    left = window.innerWidth - modalRect.width - 8;
+  }
+  if (top < 8) top = linkRect.bottom + 8;
+
+  modal.style.top = `${top}px`;
+  modal.style.left = `${left}px`;
+  modal.classList.add("visible");
+
+  // 👇 Delay per evitare conflitto col click corrente
+  setTimeout(() => {
+    document.addEventListener("click", handleOutsideClick);
+  }, 0);
+}
+
+
+function closeMiniModal() {
+  const modal = document.getElementById("mini-modal");
+  modal.classList.remove("visible");
+  modal.style.display = "none";
+
+  // 👇 Rimuove il listener quando la modale si chiude
+  document.removeEventListener("click", handleOutsideClick);
+}
+
+function handleOutsideClick(e) {
+  const modal = document.getElementById("mini-modal");
+  if (!modal.contains(e.target)) {
+    closeMiniModal();
+  }
+}
+
