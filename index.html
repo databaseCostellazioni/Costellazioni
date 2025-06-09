@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Costellazioni Boreali</title>
-  <link rel="stylesheet" href="costellazioni.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Costellazioni Boreali</title>
+    <link rel="stylesheet" href="costellazioni.css" />
+    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="pianeti.css" />
 </head>
 <body>
-<header>
-  <h1>Scopri il cielo</h1>
-  <div class="top-bar">
-    <button class="sub-buttons-button" onclick="alert('Funzione futura')">Info</button>
-    <button class="sub-buttons-button" onclick="alert('Costellazioni')">Costellazioni</button>
-    <button class="sub-buttons-button" onclick="alert('Pianeti')">Pianeti</button>
-    <button class="sub-buttons-button" onclick="alert('Oggetti celesti')">Oggetti celesti</button>
-    <button class="sub-buttons-button" onclick="alert('Cielo di oggi')">Il cielo di oggi</button>
-  </div>
-</header>
+    <div class="menu-container">
+        <button id="menu-toggle" class="menu-button">☰</button>
+        <div id="menu-dropdown" class="menu-dropdown hidden">
+            <button onclick="generaPulsantiCostellazioni()">Costellazioni</button>
+            <button onclick="mostraPianeti()">Pianeti</button>
+            <button onclick="alert('Oggetti celesti')">Oggetti celesti</button>
+            <button onclick="alert('Cielo di oggi')">Il cielo di oggi</button>
+            <button onclick="alert('Funzione futura')">Info</button>
+        </div>
+    </div>
 
+    <h1>Scopri il cielo</h1>
 
-  <main>
-    <div class="grid-buttons"></div>
+    <main>
+        <div class="grid-buttons"></div>
 
-<!-- Una sola modale riutilizzabile -->
-<div id="modal" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeModal()">✖</button>
-    <h2 id="modal-title"></h2>
-    <img id="modal-image" src="" alt="" />
-    <p id="modal-informazioni" class="informazioni"></p>
-    <p id="modal-visibility" class="visibilita"></p>
-<div class="sub-buttons">
-<div class="sub-buttons">
-  <button onclick="toggleSub('modal-myth')">Mitologia</button>
-  <button onclick="toggleSub('modal-stars')">Stelle</button>
-  <button onclick="toggleSub('modal-trova')">Come trovarla</button>
-</div>
-<div id="modal-myth" class="sub-section hidden"></div>
-<div id="modal-stars" class="sub-section hidden"></div>
-<div id="modal-trova" class="sub-section hidden"></div>
-  </div>
-</div>
+        <!-- Una sola modale riutilizzabile -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal()">✖</button>
+                <h2 id="modal-title"></h2>
+                <img id="modal-image" src="" alt="" />
+                <p id="modal-informazioni" class="informazioni"></p>
+                <p id="modal-visibility" class="visibilita"></p>
+                <div class="sub-buttons">
+                    <div class="sub-buttons">
+                        <button onclick="toggleSub('modal-myth')">Mitologia</button>
+                        <button onclick="toggleSub('modal-stars')">Stelle</button>
+                        <button onclick="toggleSub('modal-trova')">Come trovarla</button>
+                    </div>
+                    <div id="modal-myth" class="sub-section hidden"></div>
+                    <div id="modal-stars" class="sub-section hidden"></div>
+                    <div id="modal-trova" class="sub-section hidden"></div>
+                </div>
+            </div>
 
-<div id="mini-modal">
-  <span class="close" onclick="closeMiniModal()">&times;</span>
-  <h3 id="mini-modal-title"></h3>
-  <img id="mini-modal-image" src="" alt="">
-</div>
+            <div id="mini-modal">
+                <span class="close" onclick="closeMiniModal()">&times;</span>
+                <h3 id="mini-modal-title"></h3>
+                <img id="mini-modal-image" src="" alt="">
+            </div>
 
-  </main>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 - Emanuele Scaltri</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 - Emanuele Scaltri</p>
+    </footer>
 
-  <script src="listaCostellazioni.js"></script>
-  <script src="costellazioni.js"></script>
+    <script src="menu.js"></script>
+    <script src="listaCostellazioni.js"></script>
+    <script src="costellazioni.js"></script>
+    <script src="listaPianeti.js"></script>
+    <script src="pianeti.js"></script>
 </body>
 </html>

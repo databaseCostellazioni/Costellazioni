@@ -70,7 +70,7 @@ function toggleSub(id) {
 function generaPulsantiCostellazioni() {
   const container = document.querySelector(".grid-buttons");
   if (!container || !costellazioni) return;
-
+    container.innerHTML = '';
   const meseCorrente = new Date().getMonth() + 1;
 
   const visibiliOra = [];
