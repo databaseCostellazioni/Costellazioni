@@ -20,7 +20,7 @@ const pianeti = [
     const pianetiNani = [
         { id: "plutone", nome: "Plutone", img: "img/plutone.png"},
         { id: "cerere", nome: "Cerere" },
-        { id: "eris", nome: "Eris", img: "img/eris.png"}
+        { id: "eris", nome: "Eris", img: "img/eris.png"},
         { id: "makemake", nome: "Makemake" },
-        { id: "haumea", nome: "Haumea" }
+        { id: "haumea", nome: "Haumea" },
     ];
