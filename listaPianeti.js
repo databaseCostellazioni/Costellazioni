@@ -11,7 +11,7 @@ const pianeti = [
     },
     {
         nome: 'Pianeti Nani',
-        img: 'img/giove.png',
+        img: 'img/plutone.png',
         azione: () => generaPianetiNani(),
     },
 ];
