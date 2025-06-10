@@ -29,18 +29,17 @@ function generaPianetiNani() {
     const container = document.querySelector(".grid-buttons");
     if (!container) return;
 
-    // Svuota contenuto attuale
     container.innerHTML = "";
 
-    pianetiNani.forEach(({ id, nome }) => {
+    pianetiNani.forEach(({ nome, img }) => {
         const btn = document.createElement("button");
-        btn.classList.add("costellazione-btn"); // Riusa lo stile esistente
+        btn.classList.add("costellazione-btn");
         btn.onclick = () => alert(`Hai selezionato ${nome}`);
 
         btn.innerHTML = `
-      <img src="img/${id}.png" alt="${nome}" class="costellazione-img">
-      <span>${nome}</span>
-    `;
+            <img src="${img}" alt="${nome}" class="costellazione-img">
+            <span>${nome}</span>
+        `;
 
         container.appendChild(btn);
     });
