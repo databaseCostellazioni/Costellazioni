@@ -9,18 +9,20 @@
     <link rel="stylesheet" href="pianeti.css" />
 </head>
 <body>
-    <div class="menu-container">
+    <div class="top-bar-fixed">
         <button id="menu-toggle" class="menu-button">☰</button>
         <div id="menu-dropdown" class="menu-dropdown hidden">
-            <button onclick="generaPulsantiCostellazioni()">Costellazioni</button>
-            <button onclick="mostraPianeti()">Pianeti</button>
-            <button onclick="alert('Oggetti celesti')">Oggetti celesti</button>
-            <button onclick="alert('Cielo di oggi')">Il cielo di oggi</button>
-            <button onclick="alert('Funzione futura')">Info</button>
+            <button data-action="costellazioni">Costellazioni</button>
+            <button data-action="pianeti">Pianeti</button>
+            <button data-action="oggetti">Oggetti celesti</button>
+            <button data-action="cielo">Il cielo di oggi</button>
+            <button data-action="info">Info</button>
         </div>
+        <h1>Scopri il cielo</h1>
     </div>
 
-    <h1>Scopri il cielo</h1>
+
+
 
     <main>
         <div class="grid-buttons"></div>
@@ -59,8 +61,8 @@
 
     <script src="menu.js"></script>
     <script src="listaCostellazioni.js"></script>
-    <script src="costellazioni.js"></script>
     <script src="listaPianeti.js"></script>
+    <script src="costellazioni.js"></script>
     <script src="pianeti.js"></script>
 </body>
 </html>
