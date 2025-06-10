@@ -32,15 +32,6 @@ function generaPianetiNani() {
     // Svuota contenuto attuale
     container.innerHTML = "";
 
-    // Lista dei pianeti nani
-    const pianetiNani = [
-        { id: "plutone", nome: "Plutone" },
-        { id: "cerere", nome: "Cerere" },
-        { id: "eride", nome: "Eride" },
-        { id: "makemake", nome: "Makemake" },
-        { id: "haumea", nome: "Haumea" }
-    ];
-
     pianetiNani.forEach(({ id, nome }) => {
         const btn = document.createElement("button");
         btn.classList.add("costellazione-btn"); // Riusa lo stile esistente
