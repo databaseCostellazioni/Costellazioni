@@ -15,3 +15,12 @@ const pianeti = [
         azione: () => generaPianetiNani(),
     },
 ];
+
+    // Lista dei pianeti nani
+    const pianetiNani = [
+        { id: "plutone", nome: "Plutone", img: "img/plutone.png"},
+        { id: "cerere", nome: "Cerere" },
+        { id: "eris", nome: "Eris", img: "img/eris.png"}
+        { id: "makemake", nome: "Makemake" },
+        { id: "haumea", nome: "Haumea" }
+    ];
