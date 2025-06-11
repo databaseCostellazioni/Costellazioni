@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+* {
+  font-family: 'Orbitron', sans-serif;
+}
 /* Aggiungi altezza piena a html e body e fai body un flex container verticale */
 html, body {
     height: 100%;
