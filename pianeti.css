@@ -42,3 +42,13 @@
         color: rgba(220,220,220,1);
         border-color: rgba(102, 252, 241, 0.5);
     }
+
+#pianeta-image {
+    max-width: 90vw;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto; /* centra orizzontalmente e aggiunge spazio attorno */
+    border-radius: 12px;
+    object-fit: contain;
+}

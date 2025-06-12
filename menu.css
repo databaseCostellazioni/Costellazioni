@@ -28,7 +28,7 @@ html, body {
     }
 
 .menu-button {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.3);
     font-size: 1.2em;
     padding: 0.5em 1em;
     cursor: pointer;

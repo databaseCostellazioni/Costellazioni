@@ -66,14 +66,15 @@ footer {
 
 
 .grid-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-  max-width: 400px; /* Limita la larghezza totale della griglia */
-  margin: 0 auto;   /* Centra la griglia orizzontalmente */
-  padding: 0 1rem;  /* Spazio laterale per non attaccarsi ai bordi */
-  box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
+
 
     .grid-buttons button {
         background: rgba(255, 255, 255, 0.1);
@@ -94,6 +95,16 @@ footer {
         text-align: center;
         max-width: 100%;
     }
+        .grid-buttons button span {
+            margin-top: auto; /* spinge il testo in basso */
+            width: 100%;
+            color: rgba(251,245,148,1);
+            white-space: nowrap; /* NON andare a capo */
+            text-align: center;
+            padding: 0 4px; /* Spazio interno orizzontale per respiro */
+            transform:scaleX(0.8);
+        }
+
 
 .grid-buttons button:hover {
   background: rgba(102, 252, 241, 0.2);
@@ -117,32 +128,33 @@ footer {
 .sub-buttons {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: start;
     overflow-x: auto;
-    gap: 0.5rem;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
     padding-bottom: 0.5rem;
-    transform: scaleX(0.95); /* <-- Se proprio vuoi un effetto visivo */
 }
 
-.sub-buttons button {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: visible;
-    white-space: nowrap;
-    margin: 5px 2px 5px 2px;
-    padding: 5px 3px 5px 3px;
-    gap: 0.7rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 12px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
-    transition: all 0.2s ease-in-out;
-}
+    .sub-buttons button {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: visible;
+        white-space: nowrap;
+        margin: 0;
+        padding: 5px 0 5px 0;
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+        transition: all 0.2s ease-in-out;
+    }
 .sub-buttons button:hover,
 .sub-buttons-button:hover {
   background: rgba(102, 252, 241, 0.2);
@@ -150,14 +162,13 @@ footer {
   color: #8f8f8f;
   border-color: rgba(102, 252, 241, 0.5);
 }
+        .sub-buttons button .btn-text {
+            display: inline-block;
+            transform: scaleX(0.75);
+            transform-origin: center;
+            letter-spacing: 1px;
+        }
 
-
-.sub-buttons {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
 
 .sub-section {
     background-color: #0b0c10;

@@ -22,9 +22,6 @@
         <h1>Scopri il cielo</h1>
     </div>
 
-
-
-
     <main>
         <div class="grid-buttons"></div>
         <div class="grid-buttons pianeti-container"></div>
@@ -38,9 +35,9 @@
                 <p id="modal-informazioni" class="informazioni"></p>
                 <p id="modal-visibility" class="visibilita"></p>
                 <div class="sub-buttons">
-                    <button onclick="toggleSub('modal-myth')">Mitologia</button>
-                    <button onclick="toggleSub('modal-stars')">Stelle</button>
-                    <button onclick="toggleSub('modal-trova')">Come trovarla</button>
+                    <button onclick="toggleSub('modal-myth')"><span class="btn-text">Mitologia</span></button>
+                    <button onclick="toggleSub('modal-stars')"><span class="btn-text">Stelle</span></button>
+                    <button onclick="toggleSub('modal-trova')"><span class="btn-text">Come trovarla</span></button>
                 </div>
                 <div class="sub-section-container">
                     <div id="modal-myth" class="sub-section hidden"></div>
@@ -56,14 +53,13 @@
                 <h2 id="pianeta-title"></h2>
                 <img id="pianeta-image" src="" alt="" />
                 <p id="pianeta-info"></p>
-                <p id="pianeta-distanza"></p>
                 <div class="sub-buttons">
-                    <button onclick="toggleSub('modal-lune')">Lune</button>
-                    <button onclick="toggleSub('modal-osservazione')">Osservazione</button>
+                    <button onclick="toggleSub('modal-mitologia')"><span class="btn-text">Mitologia</span></button>
+                    <button onclick="toggleSub('modal-lune')"><span class="btn-text">Lune</span></button>
                 </div>
                 <div class="sub-section-container">
+                    <div id="modal-mitologia" class="sub-section hidden"></div>
                     <div id="modal-lune" class="sub-section hidden"></div>
-                    <div id="modal-osservazione" class="sub-section hidden"></div>
                 </div>
             </div>
         </div>
