@@ -1,6 +1,9 @@
 function mostraPianeti() {
-    const container = document.querySelector('.grid-buttons');
-
+    const container = document.querySelector('.pianeti-container');
+    // Mostra solo la griglia dei pianeti
+    container.classList.remove("hidden");
+    document.querySelector('.grid-buttons:not(.pianeti-container):not(.nani-container)').classList.add("hidden");
+    document.querySelector('.nani-container').classList.add("hidden");
     // 1. Svuota la griglia
     container.innerHTML = '';
 
@@ -26,20 +29,24 @@ function mostraPianeti() {
 }
 
 function generaPianetiNani() {
-    const container = document.querySelector(".grid-buttons");
+    const container = document.querySelector(".nani-container");
     if (!container) return;
+
+    container.classList.remove("hidden");
+    document.querySelector('.pianeti-container').classList.add("hidden");
+    document.querySelector('.grid-buttons:not(.pianeti-container):not(.nani-container)').classList.add("hidden");
 
     container.innerHTML = "";
 
-    pianetiNani.forEach(({ nome, img }) => {
+    pianetiNani.forEach(({ id, nome }) => {
         const btn = document.createElement("button");
-        btn.classList.add("costellazione-btn");
+        btn.classList.add("costellazione-btn"); // Riusa lo stile esistente
         btn.onclick = () => alert(`Hai selezionato ${nome}`);
 
         btn.innerHTML = `
-            <img src="${img}" alt="${nome}" class="costellazione-img">
-            <span>${nome}</span>
-        `;
+      <img src="img/${id}.png" alt="${nome}" class="costellazione-img">
+      <span>${nome}</span>
+    `;
 
         container.appendChild(btn);
     });

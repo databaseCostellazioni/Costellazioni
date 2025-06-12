@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-* {
-  font-family: 'Orbitron', sans-serif;
-}
 /* Aggiungi altezza piena a html e body e fai body un flex container verticale */
 html, body {
     height: 100%;
@@ -17,9 +13,9 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Orbitron', sans-serif;
   color: white;
   position: relative; /* per overlay */
+  font-family:orbitron;
 }
 
 /* overlay rimane uguale */
@@ -35,10 +31,11 @@ body::before {
 }
 
 header {
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  flex-shrink: 0; /* non si restringe */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    flex-shrink: 0; /* non si restringe */
+    font-family: 'Orbitron', sans-serif;
 }
 
 .top-bar {
@@ -78,25 +75,25 @@ footer {
   box-sizing: border-box;
 }
 
-.grid-buttons button {
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(251,245,148,1);
-  padding: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
-  transition: all 0.2s ease-in-out;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 100%;
-}
+    .grid-buttons button {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(251,245,148,1);
+        padding: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
 
 .grid-buttons button:hover {
   background: rgba(102, 252, 241, 0.2);
@@ -117,20 +114,34 @@ footer {
   pointer-events: none;
 }
 
+.sub-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    transform: scaleX(0.95); /* <-- Se proprio vuoi un effetto visivo */
+}
 
-.sub-buttons button,
-.sub-buttons-button {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  padding: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
-  transition: all 0.2s ease-in-out;
+.sub-buttons button {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    white-space: nowrap;
+    margin: 5px 2px 5px 2px;
+    padding: 5px 3px 5px 3px;
+    gap: 0.7rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+    transition: all 0.2s ease-in-out;
 }
 .sub-buttons button:hover,
 .sub-buttons-button:hover {
@@ -149,11 +160,11 @@ footer {
 }
 
 .sub-section {
-  background-color: #0b0c10;
-  padding: 0.5rem 1rem;
-  border-left: 3px solid #45a29e;
-  margin-bottom: 1rem;
-  border-radius: 6px;
+    background-color: #0b0c10;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid #45a29e;
+    margin-bottom: 1rem;
+    border-radius: 6px;
 }
 
 .hidden {
@@ -198,27 +209,7 @@ footer {
   object-fit: contain;
 }
 
-.trova-img {
-  display: block;
-  max-width: 90%;
-  height: auto;
-  margin: 1rem auto 0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(102, 252, 241, 0.15);
-}
-
-.mito-img {
-  display: block;
-  max-width: 90%;
-  height: auto;
-  margin: 1rem auto 0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(102, 252, 241, 0.15);
-}
-
-.stelle-img {
+.mito-img, .trova-img, .stelle-img {
   display: block;
   max-width: 90%;
   height: auto;
@@ -253,6 +244,7 @@ footer {
   border-radius: 10px;
   padding: 1rem;
   width: 150px;
+  transform:scaleX(0.8);
   max-width: 90vw;
   z-index: 9999;
   display: none;

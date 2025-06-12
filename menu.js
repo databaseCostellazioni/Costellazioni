@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Esegui l’azione corrispondente
             switch (action) {
                 case 'costellazioni':
-                    generaPulsantiCostellazioni();
+                    generaPulsantiCostellazioni(); 
                     break;
                 case 'pianeti':
                     mostraPianeti();

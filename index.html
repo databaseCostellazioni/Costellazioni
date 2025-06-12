@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Costellazioni Boreali</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="costellazioni.css" />
     <link rel="stylesheet" href="menu.css" />
     <link rel="stylesheet" href="pianeti.css" />
@@ -26,7 +27,8 @@
 
     <main>
         <div class="grid-buttons"></div>
-
+        <div class="grid-buttons pianeti-container"></div>
+        <div class="grid-buttons nani-container hidden"></div>
         <!-- Una sola modale riutilizzabile -->
         <div id="modal" class="modal hidden">
             <div class="modal-content">
@@ -36,22 +38,42 @@
                 <p id="modal-informazioni" class="informazioni"></p>
                 <p id="modal-visibility" class="visibilita"></p>
                 <div class="sub-buttons">
-                    <div class="sub-buttons">
-                        <button onclick="toggleSub('modal-myth')">Mitologia</button>
-                        <button onclick="toggleSub('modal-stars')">Stelle</button>
-                        <button onclick="toggleSub('modal-trova')">Come trovarla</button>
-                    </div>
+                    <button onclick="toggleSub('modal-myth')">Mitologia</button>
+                    <button onclick="toggleSub('modal-stars')">Stelle</button>
+                    <button onclick="toggleSub('modal-trova')">Come trovarla</button>
+                </div>
+                <div class="sub-section-container">
                     <div id="modal-myth" class="sub-section hidden"></div>
                     <div id="modal-stars" class="sub-section hidden"></div>
                     <div id="modal-trova" class="sub-section hidden"></div>
                 </div>
             </div>
-
-            <div id="mini-modal">
-                <span class="close" onclick="closeMiniModal()">&times;</span>
-                <h3 id="mini-modal-title"></h3>
-                <img id="mini-modal-image" src="" alt="">
+        </div>
+        <!-- MODALE PIANETI -->
+        <div id="modal-pianeta" class="modal hidden">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal()">✖</button>
+                <h2 id="pianeta-title"></h2>
+                <img id="pianeta-image" src="" alt="" />
+                <p id="pianeta-info"></p>
+                <p id="pianeta-distanza"></p>
+                <div class="sub-buttons">
+                    <button onclick="toggleSub('modal-lune')">Lune</button>
+                    <button onclick="toggleSub('modal-osservazione')">Osservazione</button>
+                </div>
+                <div class="sub-section-container">
+                    <div id="modal-lune" class="sub-section hidden"></div>
+                    <div id="modal-osservazione" class="sub-section hidden"></div>
+                </div>
             </div>
+        </div>
+
+        <div id="mini-modal">
+            <span class="close" onclick="closeMiniModal()">&times;</span>
+            <h3 id="mini-modal-title"></h3>
+            <img id="mini-modal-image" src="" alt="" />
+        </div>
+
 
     </main>
 

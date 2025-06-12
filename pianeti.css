@@ -1,0 +1,44 @@
+.grid-buttons button {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(251,245,148,1);
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    /* Per mantenere altezza e distribuzione */
+    height: 150px; /* o quella che preferisci */
+    justify-content: space-between; /* immagine in alto, testo in basso */
+    box-sizing: border-box;
+}
+
+    .grid-buttons button img {
+        max-height: 100px;
+        width: auto;
+        object-fit: contain;
+        align-self: flex-start; /* immagine ancorata in alto */
+    }
+
+    .grid-buttons button span {
+        margin-top: auto; /* spinge il testo in basso */
+        width: 100%;
+        font-weight: 600;
+        color: rgba(251,245,148,1);
+    }
+
+    .grid-buttons button:hover {
+        background: rgba(102, 252, 241, 0.2);
+        box-shadow: inset 0 0 12px rgba(102, 252, 241, 0.4), 0 0 16px rgba(102, 252, 241, 0.3);
+        color: rgba(220,220,220,1);
+        border-color: rgba(102, 252, 241, 0.5);
+    }

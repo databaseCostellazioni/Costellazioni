@@ -5,11 +5,11 @@ function openCard(id) {
   closeModal();
 
   // Dati principali
-  document.getElementById("modal-title").textContent = data.nome;
+  document.getElementById("modal-title").innerHTML = data.nome;
   document.getElementById("modal-image").src = data.immagine;
   document.getElementById("modal-image").alt = data.nome;
-  document.getElementById("modal-informazioni").textContent = data.informazioni;
-  document.getElementById("modal-visibility").textContent = `Periodo di visibilità: ${data.visibilita}`;
+  document.getElementById("modal-informazioni").innerHTML = data.informazioni;
+  document.getElementById("modal-visibility").innerHTML = `Periodo di visibilità: ${data.visibilita}`;
 
   // Mitologia con immagine dinamica
   document.getElementById("modal-myth").innerHTML = `
@@ -55,7 +55,6 @@ function openCard(id) {
   document.getElementById("modal").classList.remove("hidden");
 }
 
-
 function closeModal() {
   document.querySelectorAll(".modal").forEach(modal => {
     modal.classList.add("hidden");
@@ -63,14 +62,39 @@ function closeModal() {
 }
 
 function toggleSub(id) {
-  document.getElementById(id).classList.toggle("hidden");
+    const container = document.querySelector('.sub-section-container');
+    const sections = container.querySelectorAll('.sub-section');
+    const sectionToToggle = document.getElementById(id);
+
+    const isHidden = sectionToToggle.classList.contains('hidden');
+
+    // Chiudi tutte
+    sections.forEach(section => section.classList.add('hidden'));
+
+    if (isHidden) {
+        // Apri quella cliccata
+        sectionToToggle.classList.remove('hidden');
+        // Spostala in cima
+        container.prepend(sectionToToggle);
+    }
 }
+
 
 // Ordina e genera pulsanti
 function generaPulsantiCostellazioni() {
-  const container = document.querySelector(".grid-buttons");
-  if (!container || !costellazioni) return;
-    container.innerHTML = '';
+    const costellazioniContainer = document.querySelector(".grid-buttons:not(.pianeti-container):not(.nani-container)");
+    const pianetiContainer = document.querySelector(".pianeti-container");
+    const naniContainer = document.querySelector(".nani-container");
+
+    if (!costellazioniContainer || !costellazioni) return;
+
+    // Mostra solo costellazioni
+    costellazioniContainer.classList.remove("hidden");
+    pianetiContainer.classList.add("hidden");
+    naniContainer.classList.add("hidden");
+
+    // Svuota la griglia costellazioni
+    costellazioniContainer.innerHTML = '';
   const meseCorrente = new Date().getMonth() + 1;
 
   const visibiliOra = [];
@@ -100,7 +124,7 @@ function generaPulsantiCostellazioni() {
       <span>${nome}</span>
     `;
 
-    container.appendChild(btn);
+    costellazioniContainer.appendChild(btn);
   });
 }
 
