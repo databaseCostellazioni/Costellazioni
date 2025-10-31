@@ -1,8 +1,42 @@
+/* ============================================
+   COSTELLAZIONI • STILE UNIFICATO 2025
+   ============================================ */
+
+/* --- RESET E BASE --- */
 html, body {
     height: 100%;
     margin: 0;
     overflow-x: hidden;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("img/sfondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+    font-family: 'Aldrich', sans-serif;
+    font-stretch: 80%;
+    letter-spacing: -0.03em;
+}
+
+    /* Overlay scuro sopra lo sfondo */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 10, 10, 0.4);
+        z-index: -1;
+    }
+
+/* --- BARRA SUPERIORE E MENU --- */
 .top-bar-fixed {
     position: fixed;
     top: 0;
@@ -40,13 +74,15 @@ html, body {
     box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
     transition: all 0.2s ease-in-out;
 }
-.menu-button:hover {
-    background: rgba(102, 252, 241, 0.2);
-    box-shadow: inset 0 0 12px rgba(102, 252, 241, 0.4), 0 0 16px rgba(102, 252, 241, 0.3);
-    color: rgba(220,220,220,1);
-    border-color: rgba(102, 252, 241, 0.5);
-}
 
+    .menu-button:hover {
+        background: rgba(102, 252, 241, 0.2);
+        box-shadow: inset 0 0 12px rgba(102, 252, 241, 0.4), 0 0 16px rgba(102, 252, 241, 0.3);
+        color: rgba(220,220,220,1);
+        border-color: rgba(102, 252, 241, 0.5);
+    }
+
+/* --- MENU A TENDINA --- */
 .menu-dropdown {
     position: absolute;
     top: 45px;
@@ -56,22 +92,21 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 12px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.25); /* trasparente! */
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
     z-index: 1000;
 }
 
-
-.menu-dropdown.hidden {
-  display: none;
-}
+    .menu-dropdown.hidden {
+        display: none;
+    }
 
     .menu-dropdown button {
         background: none;
         border: none;
-        font-family: orbitron;
+        font-family: 'Aldrich', sans-serif;
         color: white;
         padding: 0.5em;
         text-align: left;
@@ -83,18 +118,264 @@ html, body {
 
         .menu-dropdown button:hover {
             background: rgba(102, 252, 241, 0.2);
-            color: #aefeff; /* facoltativo: colore testo in hover */
+            color: #aefeff;
         }
 
-.scaled-text {
-    display: inline-block;
-    transform: scaleX(0.75);
-    transform-origin: left;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 1px;
-    width: 133.33%;
+/* --- SEZIONI INTERNE DELLA MODALE (Mitologia, Stelle, ecc.) --- */
+.sub-section {
+    background: rgba(0, 0, 0, 0.6); /* sfondo scuro e leggermente trasparente */
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid #00ffd0; /* linea color ciano-verde */
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(69, 162, 158, 0.4), /* alone interno */
+    0 0 10px rgba(69, 162, 158, 0.25); /* alone esterno soft */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+    /* Quando è visibile */
+    .sub-section:not(.hidden):hover {
+        background: rgba(10, 10, 15, 0.7);
+        box-shadow: inset 0 0 10px rgba(69, 162, 158, 0.6), 0 0 15px rgba(69, 162, 158, 0.4);
+    }
+
+    /* Titoli e testi all’interno */
+    .sub-section h3,
+    .sub-section p {
+        margin: 0.5rem 0;
+        color: rgba(240, 240, 240, 0.95);
+        font-family: 'Aldrich', sans-serif;
+    }
+
+    /* Immagini dentro le sub-section (mito, stelle, trova) */
+    .sub-section img {
+        display: block;
+        max-width: 90%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 12px rgba(69, 162, 158, 0.3);
+    }
+
+/* --- STRUTTURA PRINCIPALE --- */
 main {
-    padding-top: 80px; /* altezza della barra fissa */
+    padding: 80px 1rem 5px;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+footer {
+    color: red;
+    text-align: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+}
+
+/* --- BOTTONI DELLE COSTELLAZIONI / PIANETI --- */
+.grid-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+    .grid-buttons button {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(251,245,148,1);
+        padding: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+        font-family: 'Aldrich', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 150px;
+        justify-content: center;
+    }
+
+        .grid-buttons button img {
+            max-height: 100px;
+            width: auto;
+            object-fit: contain;
+            margin-botton: 0.5rem;
+        }
+
+        .grid-buttons button span {
+            margin-top: auto;
+            width: 100%;
+            color: rgba(251,245,148,1);
+            white-space: nowrap;
+            text-align: center;
+            padding: 0 4px;
+            transform: scaleX(0.8);
+        }
+
+        .grid-buttons button:hover {
+            background: rgba(102, 252, 241, 0.2);
+            box-shadow: inset 0 0 12px rgba(102, 252, 241, 0.4), 0 0 16px rgba(102, 252, 241, 0.3);
+            color: rgba(220,220,220,1);
+            border-color: rgba(102, 252, 241, 0.5);
+        }
+
+/* --- SEZIONE SOTTOBOTTONI --- */
+.sub-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    overflow-x: auto;
+    gap: 5px;
+    padding-bottom: 0.5rem;
+}
+
+    .sub-buttons button {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+        font-family: 'Aldrich', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 5px 10px;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+        transition: all 0.2s ease-in-out;
+    }
+
+        .sub-buttons button:hover {
+            background: rgba(102, 252, 241, 0.2);
+            box-shadow: inset 0 0 12px rgba(102, 252, 241, 0.4), 0 0 16px rgba(102, 252, 241, 0.3);
+            color: #8f8f8f;
+            border-color: rgba(102, 252, 241, 0.5);
+        }
+
+    .sub-buttons .btn-text {
+        display: inline-block;
+        transform: scaleX(0.75);
+        transform-origin: center;
+        letter-spacing: 1px;
+    }
+
+/* --- MODALI --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    margin-top: 80px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+}
+
+/* --- Immagini nelle modali (adattamento automatico) --- */
+#modal-image,
+#pianeta-image,
+.mito-img,
+.trova-img,
+.stelle-img {
+    display: block;
+    max-width: 90vw; /* mai più larghe del viewport */
+    max-height: 80vh; /* mai più alte dell’area visibile */
+    width: auto; /* mantiene proporzioni */
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 12px;
+    object-fit: contain; /* nessun taglio */
+    box-shadow: 0 0 12px rgba(102, 252, 241, 0.15);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+}
+
+    .close-btn:hover {
+        background: rgba(102, 252, 241, 0.2);
+        box-shadow: inset 0 0 12px rgba(102, 252, 241, 0.4), 0 0 16px rgba(102, 252, 241, 0.3);
+        color: #8f8f8f;
+        border-color: rgba(102, 252, 241, 0.5);
+    }
+
+.hidden {
+    display: none !important;
+}
+
+/* --- MINI MODALE --- */
+#mini-modal {
+    position: fixed;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 1rem;
+    width: 150px;
+    transform: scaleX(0.8);
+    max-width: 90vw;
+    z-index: 9999;
+    display: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.25), 0 0 12px rgba(102, 252, 241, 0.15);
+}
+
+    #mini-modal.visible {
+        display: block;
+    }
+
+    #mini-modal img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        transform: scale(1.5);
+        transform-origin: center;
+    }
+
+    #mini-modal .close {
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+
+/* --- LINK COSTELLAZIONE --- */
+.link-costellazione {
+    color: #3a8ee6;
+    cursor: pointer;
+    text-decoration: underline;
 }

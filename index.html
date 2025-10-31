@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Costellazioni Boreali</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="costellazioni.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="menu.css" />
-    <link rel="stylesheet" href="pianeti.css" />
 </head>
 <body>
     <div class="top-bar-fixed">
@@ -15,9 +13,7 @@
         <div id="menu-dropdown" class="menu-dropdown hidden">
             <button data-action="costellazioni">Costellazioni</button>
             <button data-action="pianeti">Pianeti</button>
-            <button data-action="oggetti">Oggetti celesti</button>
             <button data-action="cielo">Il cielo di oggi</button>
-            <button data-action="info">Info</button>
         </div>
         <h1>Scopri il cielo</h1>
     </div>
@@ -56,10 +52,12 @@
                 <div class="sub-buttons">
                     <button onclick="toggleSub('modal-mitologia')"><span class="btn-text">Mitologia</span></button>
                     <button onclick="toggleSub('modal-lune')"><span class="btn-text">Lune</span></button>
+                    <button onclick="toggleSub('modal-missioni')"><span class="btn-text">Missioni Spaziali</span></button>
                 </div>
                 <div class="sub-section-container">
                     <div id="modal-mitologia" class="sub-section hidden"></div>
                     <div id="modal-lune" class="sub-section hidden"></div>
+                    <div id="modal-missioni" class="sub-section hidden"></div>
                 </div>
             </div>
         </div>

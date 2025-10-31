@@ -28,14 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 case 'pianeti':
                     mostraPianeti();
                     break;
-                case 'oggetti':
-                    alert('Oggetti celesti');
-                    break;
                 case 'cielo':
-                    alert('Il cielo di oggi');
-                    break;
-                case 'info':
-                    alert('Funzione futura');
+                    window.open('https://stellarisphere.github.io/Astrolabio/', '_blank');
                     break;
             }
         });
